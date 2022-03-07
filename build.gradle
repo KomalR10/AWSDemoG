@@ -10,6 +10,33 @@ plugins {
     id 'com.bmuschko.tomcat'
 }
 
+ repositories {
+	jcenter()
+ }
+
+ buildscript {
+  repositories {
+	jcenter()
+  }
+  dependencies {
+    classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
+  }
+ }
+
+ dependencies {
+    implementation 'com.google.guava:guava:23.0'
+    testImplementation 'junit:junit:4.12'
+    
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    
+	def tomcatVersion = '8.5.59'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+         "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+         "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+    
+ }
+ 
+ 
 
 /*jacoco {
 *toolVersion = "0.8.7"
