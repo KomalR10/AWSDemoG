@@ -10,33 +10,12 @@ plugins {
     id 'com.bmuschko.tomcat'
 }
 
-buildscript {
-       repositories {
-             jcenter()
-       }
-       dependencies {
-             classpath 'com.bmuschko:gradle-tomcat-plugin:2.4.1'
-       }
-}
 
 /*jacoco {
 *toolVersion = "0.8.7"
 
 }*/
-dependencies {
-         def tomcatVersion = '8.5.59'
-         tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
-         "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
-         "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
-         api 'org.apache.commons:commons-math3:3.6.1'
-}
 
-
-tomcat {
-         httpPort = 8080
-         enableSSL = true
-         contextPath = '/library-spring'
-}
 jacocoTestReport {
 reports {
 xml.enabled true
