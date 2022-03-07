@@ -10,21 +10,21 @@ stage('Checkout') {
                   
 stage("build") {
             steps {
-                        bat 'gradlew clean build '
+                        bat 'gradle clean build '
                    }
                 }
                 
 stage('Test') {
             steps {
                 echo 'Testing'
-                bat 'gradlew test'
+                bat 'gradle test'
                    }
                }
                
 stage('JaCoCo') {
             steps {
                 echo 'Code Coverage'
-                bat 'gradlew jacocotestreport'
+                bat 'gradle jacocotestreport'
                    }
                 }
 
