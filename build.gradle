@@ -37,9 +37,8 @@ repositories {
 dependencies {
     implementation 'javax.servlet:servlet-api:2.5'
     implementation 'mysql:mysql-connector-java:5.1.30'
-    implementation 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'
     testImplementation 'junit:junit:4.10'
-    /*implementation 'org.gradle.api.plugins:gradle-tomcat-plugin:0.9.6'*/
+    implementation 'org.gradle.api.plugins:gradle-tomcat-plugin:0.9.6'
   
 }
 
