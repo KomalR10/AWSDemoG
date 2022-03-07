@@ -7,6 +7,7 @@ plugins {
     id 'maven-publish'
     id 'jacoco'
     id 'war'
+    id 'com.bmuschko.tomcat'
 }
 
 
@@ -34,12 +35,18 @@ repositories {
 dependencies {
     implementation 'javax.servlet:servlet-api:2.5'
     implementation 'mysql:mysql-connector-java:5.1.30'
-    implementation 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'
+    /*implementation 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'*/
     testImplementation 'junit:junit:4.10'
    /*providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'*/
-    
+  
 }
-
+dependencies {
+         def tomcatVersion = '8.5.59'
+         tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+         "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+         "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+         api 'org.apache.commons:commons-math3:3.6.1'
+}
 
 /*dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
